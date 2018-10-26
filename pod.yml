@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vertx-normalizer
+  labels:
+     app: vertx-normalizer
+spec:
+  containers:
+  - name: vertx-normalizer
+    image: gcr.io/tranformacion-it-lab/vertx-normalizer:1.0.0
+    imagePullPolicy: Always
+
