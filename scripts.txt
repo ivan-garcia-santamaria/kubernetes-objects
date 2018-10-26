@@ -1,0 +1,5 @@
+act_git.sh
+all_in_one.sh
+doImageGen.sh
+killAll.sh
+killPods.sh
