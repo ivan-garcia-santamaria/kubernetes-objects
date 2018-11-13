@@ -17,6 +17,10 @@ spec:
           servicePort: 8080
         path: /v1/validator
       - backend:
+          serviceName: vertx-rsa
+          servicePort: 8080
+        path: /v1/rsa
+      - backend:
           serviceName: vertx-normalizer
           servicePort: 8080
         path: /v1/normalizer
