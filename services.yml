@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vertx-normalizer
+  labels:
+     app: vertx-normalizer
+spec:
+   ports:
+      - name: vertx-normalizer
+        nodePort: 31666
+        port: 80
+        protocol: TCP
+        targetPort: 8080
+   selector:
+        app: vertx-normalizer
+   type: NodePort
+status:
+      loadBalancer: {}    
+
