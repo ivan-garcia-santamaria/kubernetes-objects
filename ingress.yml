@@ -28,3 +28,11 @@ spec:
           serviceName: vertx-apidemo
           servicePort: 8080
         path: /v1/customers
+      - backend:
+          serviceName: vertx-resources
+          servicePort: 8080
+        path: /v1/resources
+      - backend:
+          serviceName: micronaut-iam-server
+          servicePort: 8080
+        path: /iam/v1/
