@@ -3,3 +3,4 @@ all_in_one.sh
 doImageGen.sh
 killAll.sh
 killPods.sh
+fijarNamespace.sh
