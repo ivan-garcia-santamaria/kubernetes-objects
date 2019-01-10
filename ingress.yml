@@ -1,15 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: vertx-ssl-ingress
-  namespace: default
+  name: pocs-lab-ssl-ingress
+  namespace: pocs-lab
 spec:
   tls:
   - hosts:
-    - vertx.lab.ovid-project.com
-    secretName: ovidlab
+    - pocs-lab.dev.ovid-project.com
   rules:
-  - host: vertx.lab.ovid-project.com
+  - host: pocs-lab.dev.ovid-project.com
     http:
       paths:
       - backend:

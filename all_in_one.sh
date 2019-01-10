@@ -38,7 +38,7 @@ spec:
         app: $1
     spec:
       containers:
-      - image: gcr.io/tranformacion-it-lab/$1:1.0.0
+      - image: eu.gcr.io/transformacion-it/$1:1.0.0
         imagePullPolicy: Always
         name: $1
         ports:
