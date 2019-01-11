@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pocubuntu
+spec:
+  containers:
+  - name: pocubuntu
+    image: ubuntu
+    command: ["/usr/bin/top"]
+    args: ["-b"]
