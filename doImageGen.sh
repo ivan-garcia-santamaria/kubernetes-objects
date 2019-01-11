@@ -8,7 +8,10 @@ fi
 
 nombre=$1
 
-mvn clean package -DskipTests
+if [ "$2" = "" ]
+then 
+   mvn clean package -DskipTests
+fi
 
 tagGC=`docker images | grep $nombre |awk -v nombre=$nombre -F" " '{if ($1=="eu.gcr.io/transformacion-it/"nombre) {print $3}}'`
 if [ "$tagGC" != "" ]

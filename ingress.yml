@@ -35,3 +35,7 @@ spec:
           serviceName: micronaut-iam-server
           servicePort: 8080
         path: /iam/v1/
+      - backend:
+          serviceName: front-iam-react
+          servicePort: 8080
+        path: /
