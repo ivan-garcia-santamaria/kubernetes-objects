@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 ficheroWaitForComplete="/tmp/waitForComplete.txt"
 
