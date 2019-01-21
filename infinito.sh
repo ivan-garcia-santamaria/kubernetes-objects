@@ -2,6 +2,13 @@
 
 ficheroWaitForComplete="/tmp/waitForComplete.txt"
 
+ficheroWaitForCompleteLimits="/tmp/waitForCompleteLimits.csv"
+
+if [ -f $ficheroWaitForCompleteLimits ]
+then 
+	rm $ficheroWaitForCompleteLimits
+fi
+
 grep -R waitForComplete\(\) | awk -F":" '{print $1}' | sort | uniq | awk -F"/" '{print $4}' | awk -F"." '{print $1}' > $ficheroWaitForComplete
 
 while IFS='' read -r linea || [[ -n "$linea" ]]; do
@@ -12,5 +19,7 @@ while IFS='' read -r linea || [[ -n "$linea" ]]; do
    else
 	tiempo="OJO QUE NO EXISTE POLICY"
    fi
+   endpoint=`grep -n $linea apiproxy/proxies/*`
    printf ">%s waitForComplete(): %s<\n" "$linea" "$tiempo"
+   printf "%s;%s;%s\n" "$linea" "$tiempo" "$endpoint"  >> $ficheroWaitForCompleteLimits
 done < $ficheroWaitForComplete
