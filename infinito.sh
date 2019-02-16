@@ -9,7 +9,8 @@ then
 	rm $ficheroWaitForCompleteLimits
 fi
 
-grep -R waitForComplete\(\) | awk -F":" '{print $1}' | sort | uniq | awk -F"/" '{print $4}' | awk -F"." '{print $1}' > $ficheroWaitForComplete
+#grep -R waitForComplete\(\) | awk -F":" '{print $1}' | sort | uniq | awk -F"/" '{print $4}' | awk -F"." '{print $1}' > $ficheroWaitForComplete
+grep -R waitForComplete | awk -F":" '{print $1}' | sort | uniq | awk -F"/" '{print $4}' | awk -F"." '{print $1}' > $ficheroWaitForComplete
 
 while IFS='' read -r linea || [[ -n "$linea" ]]; do
    fichero="apiproxy/policies/$linea.xml"
